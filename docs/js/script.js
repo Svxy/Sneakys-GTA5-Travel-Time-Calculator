@@ -46,12 +46,12 @@ function calculateDrivingTime() {
 
 function calculateTime(speedMPS, distanceMeters) {
 
-/////////////////////////////////////////////////////////
-// https://shorturl.at/ekO59 | https://shorturl.at/fksVY)
-/////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+// https://www.reddit.com/r/gtaonline/comments/a3ofy9/gta_v_in_game_miles/
+//////////////////////////////////////////////////////////////////////////
 
-  // time for 1 mile at 100mph in GTA 5 (adjusted for 1.28 in-game miles (see first link))
-  const timeForOneMileAt100MPH = 36 / 1.28;
+  // time for 1 mile at 100mph in GTA 5 (see link)
+  const timeForOneMileAt100MPH = 36;
 
   // the time to drive the given distance at 100mph
   const timeAt100MPH = (distanceMeters / 1609.34) * timeForOneMileAt100MPH;
