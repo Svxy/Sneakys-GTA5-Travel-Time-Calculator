@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneakys GTA 5 Travel Time Calculator</title>
+  <meta name="description" content="Calculate the time it takes for GTA 5 (specifically FiveM) vehicles to travel a given distance based on speed.">
+  <link href="css/styles.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="img/site.webmanifest">
+  <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="Sneakys GTA 5 Travel Time Calculator">
+  <meta property="og:description" content="Calculate the time it takes for GTA 5 (specifically FiveM) vehicles to travel a given distance based on speed.">
+  <meta property="og:image" content="https://tnyanto.com/Sneakys-GTA5-Travel-Time-Calculator/img/android-chrome-192x192.png">
+  <link rel="canonical" href="https://tnyanto.com/Sneakys-GTA5-Travel-Time-Calculator">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<!-- Gh Corner -->
+<a href="https://github.com/Svxy/Sneakys-GTA5-Travel-Time-Calculator" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+<body class="bg-gray-900 text-white p-8">
+  <div class="container mx-auto max-w-md">
+    <div class="flex items-center justify-center">
+      <img src="img/android-chrome-192x192.png" alt="GTA 5" class="h-28 w-auto" style="margin-bottom: 8px;">
+    </div>
+    <h1 class="text-3xl font-semibold mb-4 text-center">Sneakys GTA 5 Travel Time Calculator</h1>    
+    <div class="mb-4">
+      <label class="block mb-2">Speed (MPH):</label>
+      <input type="text" id="speedInput" class="w-full rounded p-2 text-black" placeholder="Enter speed in MPH (e.g., 60)">
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2">Distance (Mi):</label>
+      <input type="text" id="distanceInput" class="w-full rounded p-2 text-black" placeholder="Enter distance in miles (e.g., 3.65)">
+    </div>
+    <button id="calculateBtn" class="w-full bg-gray-500 text-black rounded p-2">Calculate Time</button>
+    <div id="result" class="hidden mt-4">
+      <p id="timeResult" class="text-xl font-semibold"></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

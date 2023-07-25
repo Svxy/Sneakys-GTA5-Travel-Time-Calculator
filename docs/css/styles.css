@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Pricedown&display=swap');
+
+.container {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #636060e5;
+}
+
+button, h1, p {
+  font-family: 'Pricedown', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+#timeResult {
+  font-family: 'Pricedown', sans-serif;
+  letter-spacing: 0.05em;
+}
