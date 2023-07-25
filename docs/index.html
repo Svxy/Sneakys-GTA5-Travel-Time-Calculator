@@ -38,7 +38,7 @@
     <div class="flex items-center justify-center">
       <img src="img/android-chrome-192x192.png" alt="GTA 5" class="h-28 w-auto" style="margin-bottom: 8px;">
     </div>
-    <h1 class="text-3xl font-semibold mb-4 text-center">Sneakys GTA 5 Travel Time Calculator</h1>    
+    <h1 class="text-3xl font-semibold mb-4 text-center">Sneakys GTA 5 Travel Time Calculator</h1>
     <div class="mb-4">
       <label class="block mb-2">Speed (MPH):</label>
       <input type="text" id="speedInput" class="w-full rounded p-2 text-black" placeholder="Enter speed in MPH (e.g., 60)">
@@ -47,10 +47,52 @@
       <label class="block mb-2">Distance (Mi):</label>
       <input type="text" id="distanceInput" class="w-full rounded p-2 text-black" placeholder="Enter distance in miles (e.g., 3.65)">
     </div>
-    <button id="calculateBtn" class="w-full bg-gray-500 text-black rounded p-2">Calculate Time</button>
+    <div class="flex flex-row items-center justify-center mb-4">
+      <span id="infoBtn" class="cursor-pointer text-white text-2xl bg-gray-500 rounded-full w-8 h-8 flex items-center justify-center focus:outline-none" title="Click for explanation">?</span>
+      <button id="calculateBtn" class="w-full bg-gray-500 text-black rounded p-2 ml-4">Calculate Time</button>
+    </div>    
     <div id="result" class="hidden mt-4">
       <p id="timeResult" class="text-xl font-semibold"></p>
     </div>
+
+    <!-- popup -->
+    <div id="infoPopup" class="hidden bg-gray-800 p-4 rounded mt-4 overflow-x-auto">
+      <p align=center><sup><i>click anywhere to hide</i></sup></p>
+      <h2 class="text-lg font-semibold mb-2">How Time is Calculated:</h2>
+
+      <p>
+        The time to travel a given distance at a given speed in GTA 5 is estimated using a conversion factor. This factor
+        accounts for the difference in time measurements between the real world and the game. In GTA 5, <a href='https://shorturl.at/ekO59'><u>it was observed</u></a> that
+        completing 1 mile at 100 mph takes approximately 36 seconds. However, this doesn't directly translate to real-world
+        distance/time. Therefore, to calculate the time in seconds for a given distance at a given speed in GTA 5, we use the formula:
+      </p>
+
+      <br>
+
+      <pre class="text-gray-300 p-2 mt-2 bg-gray-700 rounded whitespace-pre-wrap">
+        Time (in seconds) = (Distance in miles / Speed in mph) * Conversion factor
+      </pre>
+
+      <br>
+
+      <p>
+        The conversion factor is calculated as the time to complete 1 mile at 100 mph in GTA 5 (36 seconds) divided by the
+        corresponding real-world time to complete 1 mile at 100 mph. This provides us with an estimate of the time it would take
+        to travel the given distance at the given speed in the game.
+      </p>
+
+      <br><hr><br>
+
+      <p>
+        I apologize in advance if there are any inconsistencies, bugs, or other issues you may encounter, this app has yet to be fully tested for accuracy.
+
+      <br><br>
+
+        If something goes wrong or an output seems inaccurate please leave some feedback in the <a href='https://github.com/Svxy/Sneakys-GTA5-Travel-Time-Calculator/issues'><u>repo issues</u></a> section or contact me via Discord (sneakydev_).
+      </p>
+    </div>
+  </div>
+
   </div>
 
   <script src="js/script.js"></script>
