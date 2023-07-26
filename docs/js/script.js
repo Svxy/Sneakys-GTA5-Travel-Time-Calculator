@@ -17,9 +17,12 @@ function calculateDrivingTime() {
     return;
   }
 
-  // check for whole number, if yes, add .00 at the end for consistent conversion
+  // check if the distance is a whole number or a decimal number without a hundredths place
   if (!/\./.test(distanceInput.value)) {
-    distanceInput.value += '.00';
+    distanceInput.value = parseFloat(distanceInput.value).toFixed(2); // add two zeros to represent two decimal places
+    distanceMiles = parseFloat(distanceInput.value);
+  } else if (/^\d+\.\d$/.test(distanceInput.value)) {
+    distanceInput.value += '0'; // add a zero at the end to represent one decimal place
     distanceMiles = parseFloat(distanceInput.value);
   }
 
@@ -45,19 +48,21 @@ function calculateDrivingTime() {
 }
 
 function calculateTime(speedMPS, distanceMeters) {
+  //////////////////////////////////////////////////////////////////////////
+  // Updated values based on experiments:
+  // At 62MPH, 1 mile took roughly 58 seconds
+  // At 62MPH, 1.60 miles took roughly 1 minute and 30 seconds
+  // At 62MPH, 2 miles took roughly 1 minute and 58 seconds
+  //////////////////////////////////////////////////////////////////////////
 
-//////////////////////////////////////////////////////////////////////////
-// https://www.reddit.com/r/gtaonline/comments/a3ofy9/gta_v_in_game_miles/
-//////////////////////////////////////////////////////////////////////////
+  // time for 1 mile at 62mph in GTA 5
+  const timeForOneMileAt62MPH = 58;
 
-  // time for 1 mile at 100mph in GTA 5 (see link)
-  const timeForOneMileAt100MPH = 36;
-
-  // the time to drive the given distance at 100mph
-  const timeAt100MPH = (distanceMeters / 1609.34) * timeForOneMileAt100MPH;
+  // the time to drive the given distance at 62mph
+  const timeAt62MPH = (distanceMeters / 1609.34) * timeForOneMileAt62MPH;
 
   // time for the given speed at the given distance
-  const timeInSeconds = timeAt100MPH / (speedMPS / 26.8224); // 100mph to m/s
+  const timeInSeconds = timeAt62MPH / (speedMPS / 26.8224); // 62mph to m/s
 
   return timeInSeconds;
 }
